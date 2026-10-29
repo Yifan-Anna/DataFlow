@@ -1,0 +1,38 @@
+[
+  {
+    "case_id": "case_001",
+    "name": "9 月 GMV 查询",
+    "category": "metric_query",
+    "query": "查询 2026 年 9 月 GMV",
+    "expected": {
+      "result": {"gmv": 120000},
+      "tools": ["get_metric_definition", "get_table_schema", "run_sql"],
+      "tool_order": ["get_metric_definition", "get_table_schema", "run_sql"]
+    },
+    "tags": ["GMV", "基础能力", "正向 Case"]
+  },
+  {
+    "case_id": "case_002",
+    "name": "9 月订单量查询",
+    "category": "metric_query",
+    "query": "查询 2026 年 9 月订单量",
+    "expected": {
+      "result": {"order_count": 200},
+      "tools": ["get_metric_definition", "get_table_schema", "run_sql"],
+      "tool_order": ["get_metric_definition", "get_table_schema", "run_sql"]
+    },
+    "tags": ["订单量", "基础能力", "正向 Case"]
+  },
+  {
+    "case_id": "case_003",
+    "name": "9 月 GMV 环比",
+    "category": "time_comparison",
+    "query": "查询 2026 年 9 月 GMV，并比较 8 月环比",
+    "expected": {
+      "result": {"current_gmv": 120000, "previous_gmv": 100000, "mom_rate": 0.2},
+      "tools": ["get_metric_definition", "get_table_schema", "run_sql", "run_sql"],
+      "tool_order": ["get_metric_definition", "get_table_schema", "run_sql", "run_sql"]
+    },
+    "tags": ["GMV", "环比", "时间对比"]
+  }
+]

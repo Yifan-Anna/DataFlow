@@ -1,0 +1,14 @@
+{
+  "GMV": {
+    "definition": "SUM(pay_amount)",
+    "filter": "pay_status = 'SUCCESS'",
+    "table": "orders",
+    "unit": "元"
+  },
+  "订单量": {
+    "definition": "COUNT(DISTINCT order_id)",
+    "filter": "pay_status = 'SUCCESS'",
+    "table": "orders",
+    "unit": "单"
+  }
+}
